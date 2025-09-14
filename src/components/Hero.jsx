@@ -50,7 +50,7 @@ const Hero = () => {
           It lets you save your favorite content in just a few clicks, fast and
           hassle-free.
         </p>
-{/*          
+         
          <div className="w-full max-w-xl bg-gray-200 pt-5
           rounded-full flex items-center p-2 mt-6">
   <input
@@ -62,7 +62,7 @@ const Hero = () => {
    text-white px-6 py-2 rounded-full hover:bg-red-600 transition">
     Download
   </button>
-</div> */}
+</div> 
 
       </div>
     </div>
