@@ -1,11 +1,15 @@
+import Card from './components/Card.jsx'
 import Hero from './components/Hero.jsx'
-import Section from './components/section.jsx'
+import SectionInfo from './components/SectionInfo.jsx'
+import Use from './components/Use.jsx'
 
 const App = () => {
   return (
     <>
       <Hero />
-      <Section />
+      <SectionInfo />
+      <Use />
+      <Card />
     </>
   )
 }
