@@ -1,7 +1,8 @@
 const Hero = () => {
   return (
     <div
-      className="relative h-[80vh] mt-2 mx-2 md:mx-4 rounded-[30px] md:rounded-[60px] overflow-hidden shadow-lg"
+      className="relative h-[80vh] mt-2 mx-2 
+       md:mx-4 rounded-[30px] md:rounded-[60px] overflow-hidden shadow-lg"
       style={{ fontFamily: "'JetBrains Mono', monospace" }}
     >
       {/* Background Image */}
@@ -71,6 +72,8 @@ const Hero = () => {
   <i className="fa-brands fa-youtube text-white text-lg md:text-xl mr-4 md:mr-8"></i>
 </div>
       </div>
+
+      <section />
     </div>
   );
 };
