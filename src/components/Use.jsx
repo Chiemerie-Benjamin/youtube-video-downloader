@@ -38,7 +38,7 @@ const Use = () => {
           viewport={{ once: true }}
         >
           <img
-            src="./images/woman1.png"
+            src="./images/girl.png"
             alt="User with phone"
             className="w-full max-w-sm sm:max-w-md lg:max-w-md h-auto object-cover rounded-2xl shadow-lg"
           />

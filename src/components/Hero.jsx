@@ -27,21 +27,25 @@ const Hero = () => {
       <div className="absolute inset-0 bg-white/70"></div>
 
       {/* Navbar Content */}
-      <div className="relative flex justify-between sm:justify-around items-center pt-3 sm:pt-5 pb-3 sm:pb-5 z-10 px-3 sm:px-6 lg:px-8">
-        <div className="flex gap-2 items-center">
-          <img src="/images/video-camera.png" alt="" className="w-6 sm:w-8" />
-          <h1 className="text-base sm:text-lg lg:text-xl font-bold text-black">
-            Video <span className="font-light text-black">Max</span>
-          </h1>
-        </div>
+     {/* Navbar Content */}
+<div className="relative flex justify-between sm:justify-around items-center pt-3 sm:pt-5 pb-3 sm:pb-5 z-10 px-3 sm:px-6 lg:px-8">
+  <div className="flex items-center">
+    {/* Bigger logo only */}
+    <img
+      src="/images/redplay.png"
+      alt="Logo"
+      className="w-12 h-12 sm:w-14 sm:h-14 lg:w-40  lg:h-16 object-contain"
+    />
+  </div>
 
-        <div className="flex gap-2 sm:gap-4 items-center">
-          <img className="w-5 sm:w-6" src="./images/america.png" alt="" />
-          <h1 className="text-xs sm:text-sm lg:text-base font-semibold flex items-center gap-1">
-            English <i className="fa-solid fa-chevron-down"></i>
-          </h1>
-        </div>
-      </div>
+  <div className="flex gap-2 sm:gap-4 items-center">
+    <img className="w-5 sm:w-6" src="./images/america.png" alt="" />
+    <h1 className="text-xs sm:text-sm lg:text-base font-semibold flex items-center gap-1">
+      English <i className="fa-solid fa-chevron-down"></i>
+    </h1>
+  </div>
+</div>
+
 
       {/* Main Content */}
       <div className="relative flex flex-col items-center justify-start h-full z-10 pt-12 sm:pt-16">
