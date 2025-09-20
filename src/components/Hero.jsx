@@ -34,7 +34,7 @@ const Hero = () => {
     <img
       src="/images/redplay.png"
       alt="Logo"
-      className="w-12 h-12 sm:w-14 sm:h-14 lg:w-40  lg:h-16 object-contain"
+      className="w-12 h-12 sm:w-14 sm:h-14 lg:w-40  lg:h-16 object-contain cursor-pointer"
     />
   </div>
 
@@ -102,52 +102,61 @@ const Hero = () => {
           hassle-free.
         </motion.p>
 
-        {/* Input + Button Wrapper */}
-        <motion.div
-          className="w-[90%] sm:w-[85%] lg:w-full max-w-2xl bg-white rounded-full h-14 sm:h-16 lg:h-24 flex items-center px-2 sm:px-4 shadow-lg"
-          variants={textVariant}
-          initial="hidden"
-          animate="show"
-          custom={5}
-        >
-          <div className="flex-1 bg-gray-200 h-10 sm:h-12 lg:h-16 rounded-full flex items-center px-2 sm:px-4 flex-wrap gap-2">
-            <img className="w-4 sm:w-5 lg:w-6" src="./images/link.png" alt="" />
-            <input
-              type="text"
-              placeholder="Insert Youtube Link Here..."
-              className="flex-1 px-2 sm:px-4 lg:px-5 py-2 lg:py-5 rounded-l-full focus:outline-none border-none bg-transparent text-xs sm:text-sm lg:text-lg min-w-0"
-            />
-            <motion.button
-              className="bg-red-700 cursor-pointer text-white px-3 sm:px-6 lg:px-8 py-1.5 sm:py-2 lg:py-3 rounded-full text-xs sm:text-sm lg:text-lg whitespace-nowrap"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#b91c1c",
-              }}
-              whileTap={{ scale: 0.95 }}
-              transition={{
-                type: "spring",
-                stiffness: 400,
-                damping: 10,
-              }}
-            >
-              Download
-            </motion.button>
-          </div>
-        </motion.div>
+    {/* Input + Button Wrapper */}
+<motion.div
+  className="w-[90%] sm:w-[85%] lg:w-full max-w-2xl bg-white rounded-full h-14 sm:h-16 lg:h-20 flex items-center px-2 sm:px-4 shadow-lg"
+  variants={textVariant}
+  initial="hidden"
+  animate="show"
+  custom={5}
+>
+  {/* Left side: input with icon */}
+  <div className="flex items-center flex-1 h-full px-2 sm:px-4">
+    <img
+      className="w-4 sm:w-5 lg:w-6"
+      src="./images/link.png"
+      alt=""
+    />
+    <input
+      type="text"
+      placeholder="Insert Youtube Link Here..."
+      className="flex-1 px-2 sm:px-4 text-xs sm:text-sm lg:text-lg bg-transparent focus:outline-none"
+    />
+  </div>
+
+  {/* Right side: button */}
+  <motion.button
+    className="bg-red-700 cursor-pointer text-white px-4 sm:px-6 lg:px-8 py-2 rounded-full text-xs sm:text-sm lg:text-base whitespace-nowrap"
+    whileHover={{
+      scale: 1.05,
+      backgroundColor: "#b91c1c",
+    }}
+    whileTap={{ scale: 0.95 }}
+    transition={{
+      type: "spring",
+      stiffness: 400,
+      damping: 10,
+    }}
+  >
+    Download
+  </motion.button>
+</motion.div>
+
 
         {/* Supported platform */}
-        <motion.div
-          className="bg-gray-800 w-[90%] sm:w-[70%] lg:w-[25%] max-w-2xl h-8 sm:h-10 lg:h-14 flex items-center justify-between rounded-b-xl sm:rounded-b-2xl lg:rounded-b-3xl mt-3"
+        {/* <motion.div
+          className="bg-gray-800 w-[90%] sm:w-[20%] lg:w-[25%] max-w-xl h-8 sm:h-3 lg:h-14 
+           flex items-center justify-between rounded-b-xl sm:rounded-b-2xl lg:rounded-b-3xl mb-5"
           variants={textVariant}
           initial="hidden"
           animate="show"
           custom={6}
         >
-          <h1 className="text-white text-[10px] sm:text-xs lg:text-base ml-3 sm:ml-4 lg:ml-8">
+          <h1 className="text-white text-[10px] sm:text-xs lg:text-base ml-3  sm:ml-4 lg:ml-8">
             Supported platform:
           </h1>
           <i className="fa-brands fa-youtube text-white text-base sm:text-lg lg:text-xl mr-3 sm:mr-4 lg:mr-8"></i>
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );

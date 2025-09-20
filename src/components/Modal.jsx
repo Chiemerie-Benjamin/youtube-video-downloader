@@ -12,7 +12,8 @@ const Modal = ({ isOpen, onClose, title, content }) => {
           exit={{ opacity: 0 }}
         >
           {/* Modal box */}
-          <motion.div
+          <motion.div style={{ fontFamily: "'JetBrains Mono', monospace" }}
+
             className="bg-white rounded-xl shadow-lg max-w-2xl w-[90%] p-6 sm:p-8 relative"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

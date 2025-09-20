@@ -34,7 +34,7 @@ const faqs = [
 
 const Contact = () => {
   const [openIndex, setOpenIndex] = useState(null);
-  const [modalType, setModalType] = useState(null); // "privacy" | "contact" | "terms"
+  const [modalType, setModalType] = useState(null);
   const [copied, setCopied] = useState(false);
 
   const toggleFAQ = (index) => {
@@ -71,33 +71,45 @@ const Contact = () => {
       style={{ fontFamily: "'JetBrains Mono', monospace" }}
     >
       {/* FAQ Section */}
-      <section className="max-w-5xl mx-auto px-6 py-16">
-        <div
-          className="bg-gray-600 p-8 sm:p-12 text-white relative"
-          style={{
-            clipPath:
-              "polygon(0 40px, 40px 0, calc(100% - 40px) 0, 100% 40px, 100% calc(100% - 40px), calc(100% - 40px) 100%, 40px 100%, 0 calc(100% - 40px))",
-          }}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-16">
+        <motion.div
+          className="bg-gray-600 p-6 sm:p-10 md:p-12 text-white relative rounded-xl sm:rounded-2xl"
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-2xl sm:text-3xl font-light mb-8">
+          <motion.h2
+            className="text-xl sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8 text-center sm:text-left"
+            initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+          >
             Frequently{" "}
             <span className="font-bold text-red-600">Asked Questions</span>
-          </h2>
+          </motion.h2>
 
           <div className="divide-y divide-gray-700">
             {faqs.map((faq, index) => (
-              <div key={faq.id} className="py-6">
+              <motion.div
+                key={faq.id}
+                className="py-4 sm:py-6"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 + index * 0.2, duration: 0.6 }}
+              >
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="flex justify-between items-center w-full text-left"
                 >
-                  <span className="flex items-center gap-4">
-                    <span className="text-gray-400 font-bold">{faq.id}.</span>
-                    <span className="text-white text-base sm:text-lg">
+                  <span className="flex items-center gap-3 sm:gap-4">
+                    <span className="text-gray-400 font-bold text-sm sm:text-base">
+                      {faq.id}.
+                    </span>
+                    <span className="text-white text-sm sm:text-lg">
                       {faq.question}
                     </span>
                   </span>
-                  <span className="text-gray-400">
+                  <span className="text-gray-400 text-sm sm:text-base">
                     {openIndex === index ? (
                       <i className="fa-solid fa-chevron-up"></i>
                     ) : (
@@ -113,30 +125,49 @@ const Contact = () => {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.35 }}
-                      className="overflow-hidden mt-3 ml-10 text-gray-400 text-sm sm:text-base"
+                      className="overflow-hidden mt-2 sm:mt-3 ml-4 sm:ml-10 text-gray-300 text-xs sm:text-sm md:text-base"
                     >
                       {faq.answer}
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-6 px-6 sm:px-12">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-600">
-          <p>© 2025 Video Max</p>
+      <motion.footer
+        className="bg-white border-t border-gray-200 py-6 px-4 sm:px-8 md:px-12"
+        initial={{ y: 80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+      >
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm md:text-base text-gray-600 text-center sm:text-left">
+          <motion.p
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8 }}
+          >
+            © 2025 Video Max
+          </motion.p>
 
-          <img
+          <motion.img
             src="/images/redplay.png"
             alt="Logo"
-            className="w-12 h-12 sm:w-14 sm:h-14 lg:w-40 lg:h-16 object-contain"
+            className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 1, duration: 0.6, type: "spring" }}
           />
 
-          <div className="flex gap-6">
+          <motion.div
+            className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+          >
             <button
               onClick={() => setModalType("privacy")}
               className="hover:text-red-600"
@@ -155,22 +186,22 @@ const Contact = () => {
             >
               Contact Us
             </button>
-          </div>
+          </motion.div>
         </div>
-      </footer>
+      </motion.footer>
 
       {/* Modal */}
       <AnimatePresence>
         {modalType && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4 sm:px-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
             <motion.div
-              className="relative bg-white rounded-2xl shadow-2xl border border-red-100 max-w-2xl w-[90%] p-6 sm:p-8"
+              className="relative bg-white rounded-2xl shadow-2xl border border-red-100 max-w-2xl w-full sm:w-[90%] p-5 sm:p-8 max-h-[80vh] overflow-y-auto"
               initial={{ y: 60, opacity: 0, scale: 0.9 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 60, opacity: 0, scale: 0.9 }}
@@ -186,7 +217,7 @@ const Contact = () => {
               {/* Close button */}
               <motion.button
                 onClick={() => setModalType(null)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-red-600 text-xl"
+                className="absolute top-4 right-4 text-gray-400 hover:text-red-600 text-lg sm:text-xl"
                 whileHover={{ rotate: 90, scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -195,51 +226,20 @@ const Contact = () => {
 
               {/* Modal content */}
               <motion.div
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.4 }}
               >
                 {modalType === "privacy" && (
                   <>
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800">
                       Privacy Policy
                     </h2>
-                    <div className="text-gray-600 text-sm sm:text-base space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+                    <div className="text-gray-600 text-xs sm:text-sm md:text-base space-y-3">
                       <p>
-                        Privacy Policy Last Updated: [17-12-2023] Thank you for
-                        using our Free YouTube Downloader tool! This Privacy
-                        Policy explains how we collect, use, disclose, and
-                        safeguard your information when you use our website.
-                        Information We Collect Personal Information: We do not
-                        collect any personal information that identifies you
-                        personally, such as your name, email address, or contact
-                        details. Usage Information We may collect non-personal
-                        information about your use of the Free YouTube
-                        Downloader tool, including but not limited to the videos
-                        you download, the type of device you use, and your
-                        internet connection. How We Use Your Information We use
-                        the information collected to: Improve and optimize the
-                        performance of our Free YouTube Downloader tool. Analyze
-                        user trends and preferences. Ensure compliance with our
-                        Terms of Service. Information Sharing and Disclosure We
-                        do not sell, trade, or otherwise transfer your
-                        information to outside parties. Cookies and Tracking
-                        Technologies Our website does not use cookies or any
-                        tracking technologies to collect personal information.
-                        Security We take reasonable measures to protect the
-                        information we collect from unauthorized access or
-                        disclosure. Third-Party Links Our website may contain
-                        links to third-party websites. We are not responsible
-                        for the privacy practices of these websites. Please read
-                        the privacy policies of these third parties for more
-                        information. Children's Privacy Our Free YouTube
-                        Downloader tool is not intended for children under the
-                        age of 13. We do not knowingly collect personal
-                        information from children. Changes to This Privacy
-                        Policy We reserve the right to update or change our
-                        Privacy Policy at any time. The latest version will be
-                        posted on this page, and the date of the last update
-                        will be modified accordingl
+                        We do not collect personal data. By using this tool, you
+                        agree that downloads are for personal use only.
                       </p>
                     </div>
                   </>
@@ -247,27 +247,18 @@ const Contact = () => {
 
                 {modalType === "terms" && (
                   <>
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800">
                       Terms of Services
                     </h2>
-                    <div className="text-gray-600 text-sm sm:text-base space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+                    <div className="text-gray-600 text-xs sm:text-sm md:text-base space-y-3">
                       <p>
-                        By using Video Max, you agree to comply with all
-                        applicable copyright laws and only download content you
-                        have rights to.
+                        By using Video Max, you agree to comply with copyright
+                        laws and only download content you are legally allowed
+                        to.
                       </p>
                       <p>
-                        We are not responsible for misuse of this tool. Users
-                        accept full responsibility for the videos they download.
-                      </p>
-                      <p>
-                        We reserve the right to modify or discontinue this
-                        service at any time without prior notice.
-                      </p>
-                      <p>
-                        If you need to reach us for legal or partnership
-                        inquiries, please use the Contact modal or email us
-                        directly.
+                        We are not responsible for misuse. The service may be
+                        discontinued or changed at any time.
                       </p>
                     </div>
                   </>
@@ -275,13 +266,13 @@ const Contact = () => {
 
                 {modalType === "contact" && (
                   <>
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800">
                       Contact Us
                     </h2>
-                    <div className="text-gray-600 text-sm sm:text-base space-y-4">
+                    <div className="text-gray-600 text-xs sm:text-sm md:text-base space-y-4">
                       <p>
-                        If you have any questions or concerns regarding our
-                        Downloader or Business Inquiries please contact us.
+                        For inquiries or business, please reach out using the
+                        email below.
                       </p>
 
                       <motion.div
@@ -291,10 +282,10 @@ const Contact = () => {
                         transition={{ delay: 0.2 }}
                       >
                         <div className="flex items-center gap-3">
-                          <Mail className="text-red-600 w-5 h-5" />
+                          <Mail className="text-red-600 w-4 h-4 sm:w-5 sm:h-5" />
                           <a
                             href={`mailto:${EMAIL}`}
-                            className="text-blue-600 hover:underline break-all"
+                            className="text-blue-600 hover:underline break-all text-xs sm:text-sm md:text-base"
                           >
                             {EMAIL}
                           </a>
@@ -303,19 +294,19 @@ const Contact = () => {
                         <div className="flex flex-wrap items-center gap-2 ml-0 sm:ml-auto">
                           <button
                             onClick={openGmailCompose}
-                            className="px-3 py-1 rounded-md bg-white border text-sm hover:bg-gray-100 transition"
+                            className="px-3 py-1 rounded-md bg-white border text-xs sm:text-sm hover:bg-gray-100 transition"
                           >
                             Gmail
                           </button>
                           <button
                             onClick={openOutlookWebCompose}
-                            className="px-3 py-1 rounded-md bg-white border text-sm hover:bg-gray-100 transition"
+                            className="px-3 py-1 rounded-md bg-white border text-xs sm:text-sm hover:bg-gray-100 transition"
                           >
                             Outlook
                           </button>
                           <button
                             onClick={copyEmail}
-                            className="px-3 py-1 rounded-md bg-white border text-sm hover:bg-gray-100 transition"
+                            className="px-3 py-1 rounded-md bg-white border text-xs sm:text-sm hover:bg-gray-100 transition"
                           >
                             {copied ? "✅ Copied!" : "Copy"}
                           </button>
