@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 const Info = () => {
   return (
     <motion.div
@@ -19,7 +20,7 @@ const Info = () => {
           </span>
         </h1>
 
-        {/* Main Title */}
+        {/* Main Title */}8
         <h1 className="font-bold mt-4 text-xl sm:text-3xl lg:text-5xl mb-6 sm:mb-9">
           Video Downloader
         </h1>
