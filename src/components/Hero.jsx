@@ -27,25 +27,27 @@ const Hero = () => {
       <div className="absolute inset-0 bg-white/70"></div>
 
       {/* Navbar Content */}
-     {/* Navbar Content */}
-<div className="relative flex justify-between sm:justify-around items-center pt-3 sm:pt-5 pb-3 sm:pb-5 z-10 px-3 sm:px-6 lg:px-8">
-  <div className="flex items-center">
-    {/* Bigger logo only */}
-    <img
-      src="/images/redplay.png"
-      alt="Logo"
-      className="w-12 h-12 sm:w-14 sm:h-14 lg:w-40  lg:h-16 object-contain cursor-pointer"
-    />
-  </div>
+      {/* Navbar Content */}
+      <div className="relative flex justify-between sm:justify-around items-center pt-3 sm:pt-5 pb-3 sm:pb-5 z-10 px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center">
+          {/* Bigger logo only */}
+    <motion.img
+                src="/images/replay.png"
+                alt="Logo"
+            className="w-26 h-16 sm:w-60 sm:h-20 md:w-24  md:h-34 lg:w-28 lg:h-28 object-contain"
+                initial={{ scale: 0.6, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 1, duration: 0.6, type: "spring" }}
+              />
+        </div>
 
-  <div className="flex gap-2 sm:gap-4 items-center">
-    <img className="w-5 sm:w-6" src="./images/america.png" alt="" />
-    <h1 className="text-xs sm:text-sm lg:text-base font-semibold flex items-center gap-1">
-      English <i className="fa-solid fa-chevron-down"></i>
-    </h1>
-  </div>
-</div>
-
+        <div className="flex gap-2 sm:gap-4 items-center">
+          <img className="w-5 sm:w-6" src="./images/america.png" alt="" />
+          <h1 className="text-xs sm:text-sm lg:text-base font-semibold flex items-center gap-1">
+            English <i className="fa-solid fa-chevron-down"></i>
+          </h1>
+        </div>
+      </div>
 
       {/* Main Content */}
       <div className="relative flex flex-col items-center justify-start h-full z-10 pt-12 sm:pt-16">
@@ -102,46 +104,41 @@ const Hero = () => {
           hassle-free.
         </motion.p>
 
-    {/* Input + Button Wrapper */}
-<motion.div
-  className="w-[90%] sm:w-[85%] lg:w-full max-w-2xl bg-white rounded-full h-14 sm:h-16 lg:h-20 flex items-center px-2 sm:px-4 shadow-lg"
-  variants={textVariant}
-  initial="hidden"
-  animate="show"
-  custom={5}
->
-  {/* Left side: input with icon */}
-  <div className="flex items-center flex-1 h-full px-2 sm:px-4">
-    <img
-      className="w-4 sm:w-5 lg:w-6"
-      src="./images/link.png"
-      alt=""
-    />
-    <input
-      type="text"
-      placeholder="Insert Youtube Link Here..."
-      className="flex-1 px-2 sm:px-4 text-xs sm:text-sm lg:text-lg bg-transparent focus:outline-none"
-    />
-  </div>
+        {/* Input + Button Wrapper */}
+        <motion.div
+          className="w-[90%] sm:w-[85%] lg:w-full max-w-2xl bg-white rounded-full h-14 sm:h-16 lg:h-20 flex items-center px-2 sm:px-4 shadow-lg"
+          variants={textVariant}
+          initial="hidden"
+          animate="show"
+          custom={5}
+        >
+          {/* Left side: input with icon */}
+          <div className="flex items-center flex-1 h-full px-2 sm:px-4">
+            <img className="w-4 sm:w-5 lg:w-6" src="./images/link.png" alt="" />
+            <input
+              type="text"
+              placeholder="Insert Youtube Link Here..."
+              className="flex-1 px-2 sm:px-4 text-xs sm:text-sm lg:text-lg bg-transparent focus:outline-none"
+            />
+          </div>
 
-  {/* Right side: button */}
-  <motion.button
-    className="bg-red-700 cursor-pointer text-white px-4 sm:px-6 lg:px-8 py-2 rounded-full text-xs sm:text-sm lg:text-base whitespace-nowrap"
-    whileHover={{
-      scale: 1.05,
-      backgroundColor: "#b91c1c",
-    }}
-    whileTap={{ scale: 0.95 }}
-    transition={{
-      type: "spring",
-      stiffness: 400,
-      damping: 10,
-    }}
-  >
-    Download
-  </motion.button>
-</motion.div>
-
+          {/* Right side: button */}
+          <motion.button
+            className="bg-red-700 cursor-pointer text-white px-4 sm:px-6 lg:px-8 py-2 rounded-full text-xs sm:text-sm lg:text-base whitespace-nowrap"
+            whileHover={{
+              scale: 1.05,
+              backgroundColor: "#b91c1c",
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 10,
+            }}
+          >
+            Download
+          </motion.button>
+        </motion.div>
 
         {/* Supported platform */}
         {/* <motion.div

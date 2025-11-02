@@ -145,7 +145,7 @@ const Contact = () => {
         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm md:text-base text-gray-600 text-center sm:text-left">
-          <motion.p
+          <motion.p 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8 }}
@@ -154,9 +154,9 @@ const Contact = () => {
           </motion.p>
 
           <motion.img
-            src="/images/redplay.png"
+            src="/images/replay.png"
             alt="Logo"
-            className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
+        className="w-26 h-16 sm:w-60 sm:h-20 md:w-24  md:h-34 lg:w-28 lg:h-28 object-contain"
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, duration: 0.6, type: "spring" }}
