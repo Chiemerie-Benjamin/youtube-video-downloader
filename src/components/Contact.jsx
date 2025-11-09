@@ -154,9 +154,10 @@ const Contact = () => {
           </motion.p>
 
           <motion.img
+          
             src="/images/replay.png"
-            alt="Logo"
-        className="w-26 h-16 sm:w-60 sm:h-20 md:w-24  md:h-34 lg:w-28 lg:h-28 object-contain"
+            alt="Logo" 
+        className="w-26 h-16 sm:w-60 sm:h-20 md:w-24 cursor-pointer  md:h-34 lg:w-28 lg:h-28 object-contain"
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, duration: 0.6, type: "spring" }}
