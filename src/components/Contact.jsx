@@ -1,34 +1,34 @@
 // src/components/Contact.jsx
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Mail } from "lucide-react";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail } from 'lucide-react';
 
-const EMAIL = "mbaezuechiemerie@outlook.com";
+const EMAIL = 'mbaezuechiemerie@outlook.com';
 
 const faqs = [
   {
-    id: "01",
-    question: "What is Video Max?",
+    id: '01',
+    question: 'What is Video Max?',
     answer:
-      "YouTube Downloader is a free online tool that allows you to download and save videos from YouTube to your device easily.",
+      'YouTube Downloader is a free online tool that allows you to download and save videos from YouTube to your device easily.',
   },
   {
-    id: "02",
-    question: "Is Video Max free?",
+    id: '02',
+    question: 'Is Video Max free?',
     answer:
-      "Yes, this downloader is completely free to use with no hidden charges or subscription required.",
+      'Yes, this downloader is completely free to use with no hidden charges or subscription required.',
   },
   {
-    id: "03",
-    question: "Where are the downloaded videos stored?",
+    id: '03',
+    question: 'Where are the downloaded videos stored?',
     answer:
-      "Downloaded videos are saved in your device’s default download folder or the location you select when saving.",
+      'Downloaded videos are saved in your device’s default download folder or the location you select when saving.',
   },
   {
-    id: "04",
-    question: "Can we download unlimited videos?",
+    id: '04',
+    question: 'Can we download unlimited videos?',
     answer:
-      "Yes, there are no restrictions. You can download as many videos as you like without limits.",
+      'Yes, there are no restrictions. You can download as many videos as you like without limits.',
   },
 ];
 
@@ -42,17 +42,17 @@ const Contact = () => {
   };
 
   const openGmailCompose = () => {
-    const subject = encodeURIComponent("Inquiry about Video Max");
-    const body = encodeURIComponent("Hi,\n\nI would like to ask about...");
+    const subject = encodeURIComponent('Inquiry about Video Max');
+    const body = encodeURIComponent('Hi,\n\nI would like to ask about...');
     const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${subject}&body=${body}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const openOutlookWebCompose = () => {
-    const subject = encodeURIComponent("Inquiry about Video Max");
-    const body = encodeURIComponent("Hi,\n\nI would like to ask about...");
+    const subject = encodeURIComponent('Inquiry about Video Max');
+    const body = encodeURIComponent('Hi,\n\nI would like to ask about...');
     const url = `https://outlook.live.com/owa/?path=/mail/action/compose&to=${EMAIL}&subject=${subject}&body=${body}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const copyEmail = async () => {
@@ -61,7 +61,7 @@ const Contact = () => {
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
     } catch (e) {
-      alert("Unable to copy automatically. Please copy manually: " + EMAIL);
+      alert('Unable to copy automatically. Please copy manually: ' + EMAIL);
     }
   };
 
@@ -76,7 +76,7 @@ const Contact = () => {
           className="bg-gray-600 p-6 sm:p-10 md:p-12 text-white relative rounded-xl sm:rounded-2xl"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <motion.h2
             className="text-xl sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8 text-center sm:text-left"
@@ -84,7 +84,7 @@ const Contact = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.7 }}
           >
-            Frequently{" "}
+            Frequently{' '}
             <span className="font-bold text-red-600">Asked Questions</span>
           </motion.h2>
 
@@ -122,7 +122,7 @@ const Contact = () => {
                   {openIndex === index && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
+                      animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.35 }}
                       className="overflow-hidden mt-2 sm:mt-3 ml-4 sm:ml-10 text-gray-300 text-xs sm:text-sm md:text-base"
@@ -142,10 +142,10 @@ const Contact = () => {
         className="bg-white border-t border-gray-200 py-6 px-4 sm:px-8 md:px-12"
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
       >
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm md:text-base text-gray-600 text-center sm:text-left">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8 }}
@@ -154,13 +154,13 @@ const Contact = () => {
           </motion.p>
 
           <motion.img
-          
             src="/images/replay.png"
-            alt="Logo" 
-        className="w-26 h-16 sm:w-60 sm:h-20 md:w-24 cursor-pointer  md:h-34 lg:w-28 lg:h-28 object-contain"
+            alt="Logo"
+            url="Hero.jsx"
+            className="w-26 h-16 sm:w-60 sm:h-20 md:w-24 cursor-pointer  md:h-34 lg:w-28 lg:h-28 object-contain"
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 1, duration: 0.6, type: "spring" }}
+            transition={{ delay: 1, duration: 0.6, type: 'spring' }}
           />
 
           <motion.div
@@ -170,19 +170,19 @@ const Contact = () => {
             transition={{ delay: 1.2, duration: 0.6 }}
           >
             <button
-              onClick={() => setModalType("privacy")}
+              onClick={() => setModalType('privacy')}
               className="hover:text-red-600"
             >
               Privacy Policy
             </button>
             <button
-              onClick={() => setModalType("terms")}
+              onClick={() => setModalType('terms')}
               className="hover:text-red-600"
             >
               Terms Of Services
             </button>
             <button
-              onClick={() => setModalType("contact")}
+              onClick={() => setModalType('contact')}
               className="hover:text-red-600"
             >
               Contact Us
@@ -207,7 +207,7 @@ const Contact = () => {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 60, opacity: 0, scale: 0.9 }}
               transition={{
-                type: "spring",
+                type: 'spring',
                 damping: 25,
                 stiffness: 300,
                 duration: 0.4,
@@ -232,7 +232,7 @@ const Contact = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.4 }}
               >
-                {modalType === "privacy" && (
+                {modalType === 'privacy' && (
                   <>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800">
                       Privacy Policy
@@ -246,7 +246,7 @@ const Contact = () => {
                   </>
                 )}
 
-                {modalType === "terms" && (
+                {modalType === 'terms' && (
                   <>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800">
                       Terms of Services
@@ -265,7 +265,7 @@ const Contact = () => {
                   </>
                 )}
 
-                {modalType === "contact" && (
+                {modalType === 'contact' && (
                   <>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800">
                       Contact Us
@@ -309,7 +309,7 @@ const Contact = () => {
                             onClick={copyEmail}
                             className="px-3 py-1 rounded-md bg-white border text-xs sm:text-sm hover:bg-gray-100 transition"
                           >
-                            {copied ? "✅ Copied!" : "Copy"}
+                            {copied ? '✅ Copied!' : 'Copy'}
                           </button>
                         </div>
                       </motion.div>

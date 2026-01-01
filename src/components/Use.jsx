@@ -1,23 +1,23 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const steps = [
   {
-    id: "01",
-    title: "Find Video",
-    desc: "Find the video you want from among the videos available on YouTube and copy its link.",
+    id: '01',
+    title: 'Find Video',
+    desc: 'Find the video you want from among the videos available on YouTube and copy its link.',
     active: false,
   },
   {
-    id: "02",
-    title: "Paste Video",
-    desc: "Paste the copied link in the desired box and then wait for the system to display the desired video download links in different formats and sizes.",
+    id: '02',
+    title: 'Paste Video',
+    desc: 'Paste the copied link in the desired box and then wait for the system to display the desired video download links in different formats and sizes.',
     active: true,
   },
   {
-    id: "03",
-    title: "Download Video",
-    desc: "And in the last step, click on download from the displayed list and save the desired video on your device.",
+    id: '03',
+    title: 'Download Video',
+    desc: 'And in the last step, click on download from the displayed list and save the desired video on your device.',
     active: false,
   },
 ];
@@ -34,7 +34,7 @@ const Use = () => {
           className="flex justify-center"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true }}
         >
           <img
@@ -84,15 +84,15 @@ const Use = () => {
                 {/* Number */}
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
                   className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 
                               flex items-center justify-center 
                               rounded-full border-2 font-bold 
                               text-sm sm:text-base lg:text-lg
                               ${
                                 step.active
-                                  ? "bg-red-600 text-white border-red-600 pt-6 pb-6 pl-5 pr-5 text-center"
-                                  : "bg-white text-red-600 border-red-600 pt-6 pb-6 pl-5 pr-5 text-center"
+                                  ? 'bg-red-600 text-white border-red-600 pt-6 pb-6 pl-5 pr-5 text-center'
+                                  : 'bg-white text-red-600 border-red-600 pt-6 pb-6 pl-5 pr-5 text-center'
                               }`}
                 >
                   {step.id}
